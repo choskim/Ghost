@@ -1,5 +1,6 @@
 var frontend    = require('../controllers/frontend'),
     config      = require('../config'),
+    path        = require('path'),
 
     ONE_HOUR_S  = 60 * 60,
     ONE_YEAR_S  = 365 * 24 * ONE_HOUR_S;
@@ -24,12 +25,9 @@ module.exports = function (server) {
     server.get('/page/:page/', frontend.homepage);
     server.get('/', frontend.homepage);
 
-    // PASTE THE FOLLOWING:
-    // Customization for sitemap file.
-    server.get("/sitemap.xml/", function (req, res, next) {
-        res.download(path.join(__dirname, '/content/sitemap.xml'));
+    server.get("/sitemap.xml/", function (req, res) {
+        res.sendfile(path.join(__dirname, '/../../../sitemap.xml'));
     });
-     // End sitemap customization.
 
     server.get('*', frontend.single);
 
