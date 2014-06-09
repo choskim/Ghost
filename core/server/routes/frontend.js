@@ -26,8 +26,8 @@ module.exports = function (server) {
 
     // PASTE THE FOLLOWING:
     // Customization for sitemap file.
-    server.get(/^\/sitemap.xml\/$/, function (req, res, next) {
-        res.download(path.join(__dirname, '/../../../content/sitemap.xml'));
+    server.get("/sitemap.xml/", function (req, res, next) {
+        res.download(path.join(__dirname, '/content/sitemap.xml'));
     });
      // End sitemap customization.
 
