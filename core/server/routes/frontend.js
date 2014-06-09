@@ -23,6 +23,14 @@ module.exports = function (server) {
     server.get('/tag/:slug/', frontend.tag);
     server.get('/page/:page/', frontend.homepage);
     server.get('/', frontend.homepage);
+
+    // PASTE THE FOLLOWING:
+    // Customization for sitemap file.
+    server.get(/^\/sitemap.xml\/$/, function (req, res, next) {
+        res.download(path.join(__dirname, '/../../../content/sitemap.xml'));
+    });
+     // End sitemap customization.
+
     server.get('*', frontend.single);
 
 
