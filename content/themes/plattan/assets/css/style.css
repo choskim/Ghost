@@ -703,7 +703,7 @@ blockquote {
   display: none; }
 
 code {
-  background: #e1e1e0;
+  /*background: #e1e1e0;*/
   padding: 0 0.3em; }
 
 .site {
