@@ -702,8 +702,8 @@ blockquote {
 .home-template blockquote:before {
   display: none; }
 
-code {
-  padding: 0 0.3em; }
+/*code {*/
+  /*padding: 0 0.3em; }*/
 
 .site {
   overflow: hidden; }
